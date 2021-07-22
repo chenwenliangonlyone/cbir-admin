@@ -13,6 +13,7 @@
     <name>核心模块</name>
 
     <properties>
+<!--        jjwt用于作为JSON对象在各方之间安全地传输信息。该信息可以被验证和信任，因为它是数字签名的-->
         <jjwt.version>0.11.1</jjwt.version>
         <!-- oshi监控需要指定jna版本, 问题详见 https://github.com/oshi/oshi/issues/1040 -->
         <jna.version>5.8.0</jna.version>

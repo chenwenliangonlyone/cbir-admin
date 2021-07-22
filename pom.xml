@@ -26,6 +26,10 @@
         <version>2.2.10.RELEASE</version>
     </parent>
 
+    <!--    指定编码格式默认使用utf-8。-->
+    <!--    指定java版本默认使用1.8。-->
+    <!--    提供Dependency Management进行项目依赖的版本管理，如指定实际依赖的版本号（已经做版本兼容性测试）。-->
+    <!--    默认的资源过滤和插件管理。-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -39,17 +43,19 @@
     </properties>
 
     <dependencies>
-        <!--Spring boot 核心-->
+        <!--Spring boot Web容器 嵌入了tomcat  这个和spring-boot-starter-parent是必要的-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--Spring boot 核心  jpa数据持久化 预先生成查询 也可以写sql-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!--Spring boot Web容器-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+
 
         <!--Spring boot 测试-->
         <dependency>
@@ -65,6 +71,9 @@
         </dependency>
 
         <!-- spring boot 缓存 -->
+<!--        Cache接口下Spring提供了各种xxxCache的实现,如RedisCache,EhCacheCache , ConcurrentMapCache等；-->
+<!--        每次调用需要缓存功能的方法时，Spring会检查检查指定参数的指定的目标 方法 是否已经被调用过；-->
+<!--        如果有就直接从缓存中获取方法调用后的结果，如果没有就调用方法并缓存结果返回给用户。下次直接从缓存中获取-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
@@ -94,7 +103,7 @@
             <version>${log4jdbc.version}</version>
         </dependency>
 
-        <!-- Swagger UI 相关 -->
+        <!-- Swagger UI 相关 根据代码自动生成 API 文档-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
@@ -177,6 +186,9 @@
         </dependency>
 
         <!--mapStruct依赖-->
+<!--        https://blog.csdn.net/qq122516902/article/details/87259752 解释mapStruct作用
+            以往都是建一个用一个对象接收多个持久类的字段返回 用到getter setter
+            mapStruct不用-->
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
