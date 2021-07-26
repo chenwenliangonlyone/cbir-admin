@@ -4,21 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.zhengjie</groupId>
-    <artifactId>eladmin</artifactId>
+    <groupId>com.imt</groupId>
+    <artifactId>cbiradmin</artifactId>
     <packaging>pom</packaging>
     <version>2.6</version>
 
     <modules>
-        <module>eladmin-common</module>
-        <module>eladmin-logging</module>
-        <module>eladmin-system</module>
-        <module>eladmin-tools</module>
-        <module>eladmin-generator</module>
+        <module>cbiradmin-common</module>
+        <module>cbiradmin-logging</module>
+        <module>cbiradmin-system</module>
+        <module>cbiradmin-tools</module>
+        <module>cbiradmin-generator</module>
     </modules>
 
-    <name>EL-ADMIN 后台管理</name>
-    <url>http://auauz.net</url>
+    <name>图像检索后台管理</name>
+    <url>https://www.gxar.com/</url>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
