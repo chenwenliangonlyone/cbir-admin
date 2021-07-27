@@ -21,9 +21,9 @@ import cn.hutool.extra.template.Template;
 import cn.hutool.extra.template.TemplateConfig;
 import cn.hutool.extra.template.TemplateEngine;
 import cn.hutool.extra.template.TemplateUtil;
+import com.imt.domain.vo.EmailVo;
 import com.imt.modules.system.service.VerifyService;
 import lombok.RequiredArgsConstructor;
-import com.imt.domain.vo.EmailVo;
 import com.imt.exception.BadRequestException;
 import com.imt.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,10 +31,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.Collections;
 
-/**
- * @author Zheng Jie
- * @date 2018-12-26
- */
+
 @Service
 @RequiredArgsConstructor
 public class VerifyServiceImpl implements VerifyService {

@@ -15,8 +15,8 @@
  */
 package com.imt.service;
 
-import com.imt.domain.vo.EmailVo;
 import com.imt.domain.EmailConfig;
+import com.imt.domain.vo.EmailVo;
 
 /**
  * @author Zheng Jie

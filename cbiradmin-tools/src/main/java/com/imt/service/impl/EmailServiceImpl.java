@@ -19,16 +19,17 @@ import cn.hutool.extra.mail.Mail;
 import cn.hutool.extra.mail.MailAccount;
 import com.imt.domain.EmailConfig;
 import com.imt.domain.vo.EmailVo;
+import com.imt.exception.BadRequestException;
 import com.imt.repository.EmailRepository;
 import com.imt.service.EmailService;
-import lombok.RequiredArgsConstructor;
-import com.imt.exception.BadRequestException;
 import com.imt.utils.EncryptUtils;
+import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.Optional;
 
 /**

@@ -19,14 +19,15 @@ import com.imt.modules.system.service.VerifyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
-import com.imt.domain.vo.EmailVo;
-import com.imt.service.EmailService;
 import com.imt.utils.enums.CodeBiEnum;
 import com.imt.utils.enums.CodeEnum;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Objects;
+import com.imt.domain.vo.EmailVo;
+import com.imt.service.EmailService;
+
 
 /**
  * @author Zheng Jie
