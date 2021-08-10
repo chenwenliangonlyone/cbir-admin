@@ -186,7 +186,7 @@
         </dependency>
 
         <!--mapStruct依赖-->
-<!--        https://blog.csdn.net/qq122516902/article/details/87259752 解释mapStruct作用
+        <!--https://blog.csdn.net/qq122516902/article/details/87259752 解释mapStruct作用
             以往都是建一个用一个对象接收多个持久类的字段返回 用到getter setter
             mapStruct不用-->
         <dependency>

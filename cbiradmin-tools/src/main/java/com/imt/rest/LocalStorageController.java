@@ -1,23 +1,10 @@
-/*
- *  Copyright 2019-2020 Zheng Jie
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *  http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- */
 package com.imt.rest;
 
 import com.imt.domain.LocalStorage;
 import com.imt.service.LocalStorageService;
 import com.imt.service.dto.LocalStorageQueryCriteria;
+import com.imt.utils.SecurityUtils;
+import com.imt.utils.enums.DataScopeEnum;
 import lombok.RequiredArgsConstructor;
 import com.imt.annotation.Log;
 import com.imt.exception.BadRequestException;
@@ -32,11 +19,8 @@ import io.swagger.annotations.*;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
-/**
-* @author Zheng Jie
-* @date 2019-09-05
-*/
 @RestController
 @RequiredArgsConstructor
 @Api(tags = "工具：本地存储管理")
@@ -49,6 +33,11 @@ public class LocalStorageController {
     @GetMapping
     @PreAuthorize("@el.check('storage:list')")
     public ResponseEntity<Object> query(LocalStorageQueryCriteria criteria, Pageable pageable){
+        //增加createBy条件 查询权限内文件
+        String scopeType = SecurityUtils.getDataScopeType();
+        if (DataScopeEnum.ALL.getValue() != scopeType){
+            criteria.setCreateBy(SecurityUtils.getCurrentUsername());
+        }
         return new ResponseEntity<>(localStorageService.queryAll(criteria,pageable),HttpStatus.OK);
     }
 
@@ -56,6 +45,11 @@ public class LocalStorageController {
     @GetMapping(value = "/download")
     @PreAuthorize("@el.check('storage:list')")
     public void download(HttpServletResponse response, LocalStorageQueryCriteria criteria) throws IOException {
+        //增加createBy条件 查询权限内文件
+        String scopeType = SecurityUtils.getDataScopeType();
+        if (DataScopeEnum.ALL.getValue() != scopeType){
+            criteria.setCreateBy(SecurityUtils.getCurrentUsername());
+        }
         localStorageService.download(localStorageService.queryAll(criteria), response);
     }
 
@@ -69,14 +63,18 @@ public class LocalStorageController {
 
     @PostMapping("/pictures")
     @ApiOperation("上传图片")
-    public ResponseEntity<Object> upload(@RequestParam MultipartFile file){
+    public ResponseEntity<Object> upload(@RequestParam String categoryId,@RequestParam MultipartFile[] multipartFiles){
         // 判断文件是否为图片
-        String suffix = FileUtil.getExtensionName(file.getOriginalFilename());
-        if(!FileUtil.IMAGE.equals(FileUtil.getFileType(suffix))){
-            throw new BadRequestException("只能上传图片");
+        ArrayList<LocalStorage> retList = new ArrayList<LocalStorage>();
+        for (MultipartFile multipartFile : multipartFiles) {
+            String suffix = FileUtil.getExtensionName(multipartFile.getOriginalFilename());
+            if(!FileUtil.IMAGE.equals(FileUtil.getFileType(suffix))){
+                throw new BadRequestException("只能上传图片");
+            }
+            LocalStorage localStorage = localStorageService.create(null, multipartFile);
+            retList.add(localStorage);
         }
-        LocalStorage localStorage = localStorageService.create(null, file);
-        return new ResponseEntity<>(localStorage, HttpStatus.OK);
+        return new ResponseEntity<>(retList, HttpStatus.OK);
     }
 
     @Log("修改文件")

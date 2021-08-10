@@ -816,9 +816,6 @@ CREATE TABLE `tool_qiniu_content` (
   UNIQUE KEY `uniq_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='七牛云文件存储';
 
--- ----------------------------
--- Records of tool_qiniu_content
--- ----------------------------
 BEGIN;
 COMMIT;
 

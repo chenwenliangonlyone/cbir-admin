@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
+
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ import static springfox.documentation.schema.AlternateTypeRules.newRule;
 
 /**
  * api页面 /doc.html
- * @author Zheng Jie
- * @date 2018-11-23
+
+
  */
 @Configuration
 @EnableSwagger2
@@ -72,9 +72,9 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .description("一个简单且易上手的 Spring boot 后台管理框架")
-                .title("EL-ADMIN 接口文档")
-                .version("2.6")
+                .description("图像检索后台管理系统")
+                .title("CBIR-ADMIN 接口文档")
+                .version("1.0")
                 .build();
     }
 

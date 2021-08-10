@@ -1,6 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
- *
+
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -20,7 +19,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * @author Zheng Jie
+
  * @date 2019-01-14
  */
 public interface ColumnInfoRepository extends JpaRepository<ColumnInfo,Long> {

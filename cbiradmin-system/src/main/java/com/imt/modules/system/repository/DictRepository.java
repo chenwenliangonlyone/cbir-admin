@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
+
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
-* @author Zheng Jie
+
 * @date 2019-04-10
 */
 public interface DictRepository extends JpaRepository<Dict, Long>, JpaSpecificationExecutor<Dict> {

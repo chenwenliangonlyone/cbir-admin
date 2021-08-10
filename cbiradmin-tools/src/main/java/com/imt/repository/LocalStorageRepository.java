@@ -1,6 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
- *
+
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -19,9 +18,5 @@ import com.imt.domain.LocalStorage;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-/**
-* @author Zheng Jie
-* @date 2019-09-05
-*/
 public interface LocalStorageRepository extends JpaRepository<LocalStorage, Long>, JpaSpecificationExecutor<LocalStorage> {
 }

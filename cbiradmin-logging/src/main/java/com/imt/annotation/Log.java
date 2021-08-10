@@ -1,6 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
- *
+
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -21,7 +20,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author Zheng Jie
+
  * @date 2018-11-24
  */
 @Target(ElementType.METHOD)

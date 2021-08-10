@@ -1,6 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
- *
+
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -19,7 +18,7 @@ import lombok.Data;
 
 /**
  * 修改密码的 Vo 类
- * @author Zheng Jie
+
  * @date 2019年7月11日13:59:49
  */
 @Data

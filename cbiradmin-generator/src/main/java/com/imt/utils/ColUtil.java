@@ -1,6 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
- *
+
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -22,7 +21,7 @@ import org.slf4j.LoggerFactory;
 /**
  * sql字段转java
  *
- * @author Zheng Jie
+
  * @date 2019-01-03
  */
 public class ColUtil {

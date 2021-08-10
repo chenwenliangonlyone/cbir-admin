@@ -1,6 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
- *
+
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -26,7 +25,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
-* @author Zheng Jie
+
 * @date 2019-03-29
 */
 @Entity

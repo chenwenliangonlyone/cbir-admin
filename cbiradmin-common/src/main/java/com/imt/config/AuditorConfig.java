@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
+
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,8 +22,6 @@ import java.util.Optional;
 
 /**
  * @description  : 设置审计
- * @author  : Dong ZhaoYang
- * @date : 2019/10/28
  */
 @Component("auditorAware")
 public class AuditorConfig implements AuditorAware<String> {

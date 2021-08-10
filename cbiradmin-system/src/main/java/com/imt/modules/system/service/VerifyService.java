@@ -3,8 +3,8 @@ package com.imt.modules.system.service;
 import com.imt.domain.vo.EmailVo;
 
 /**
- * @author Zheng Jie
- * @date 2018-12-26
+
+
  */
 public interface VerifyService {
 

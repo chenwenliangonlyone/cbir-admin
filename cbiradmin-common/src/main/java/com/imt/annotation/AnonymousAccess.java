@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
+
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.imt.annotation;
 import java.lang.annotation.*;
 
 /**
- * @author jacky
  *  用于标记匿名访问方法
  */
 @Inherited

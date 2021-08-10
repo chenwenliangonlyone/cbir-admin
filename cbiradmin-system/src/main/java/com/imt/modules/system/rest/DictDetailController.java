@@ -1,6 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
- *
+
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -19,6 +18,8 @@ import com.imt.modules.system.domain.DictDetail;
 import com.imt.modules.system.service.DictDetailService;
 import com.imt.modules.system.service.dto.DictDetailDto;
 import com.imt.modules.system.service.dto.DictDetailQueryCriteria;
+import com.imt.utils.SecurityUtils;
+import com.imt.utils.enums.DataScopeEnum;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
-* @author Zheng Jie
+
 * @date 2019-04-10
 */
 @RestController

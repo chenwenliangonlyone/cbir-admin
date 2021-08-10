@@ -32,8 +32,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * methods.
  * <p>
  * 支持匿名访问   GetMapping
- *
- * @author liaojinlong
  * @see RequestMapping
  */
 @AnonymousAccess

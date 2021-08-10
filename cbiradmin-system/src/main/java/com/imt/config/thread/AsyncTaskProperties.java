@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
+
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import org.springframework.stereotype.Component;
 /**
  * 线程池配置属性类
  * @author https://juejin.im/entry/5abb8f6951882555677e9da2
- * @date 2019年10月31日14:58:18
  */
 @Data
 @Component

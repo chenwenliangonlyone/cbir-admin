@@ -1,6 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
- *
+
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -25,8 +24,6 @@ import java.util.List;
 
 /**
  * 发送邮件时，接收参数的类
- * @author 郑杰
- * @date 2018/09/28 12:02:14
  */
 @Data
 @AllArgsConstructor

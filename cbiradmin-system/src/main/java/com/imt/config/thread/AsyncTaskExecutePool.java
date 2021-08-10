@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
+
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -26,7 +26,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * 异步任务线程池装配类
  * @author https://juejin.im/entry/5abb8f6951882555677e9da2
- * @date 2019年10月31日15:06:18
  */
 @Slf4j
 @Configuration

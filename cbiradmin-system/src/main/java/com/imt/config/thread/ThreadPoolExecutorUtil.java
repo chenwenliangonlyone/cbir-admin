@@ -1,5 +1,5 @@
 /*
- *  Copyright 2019-2020 Zheng Jie
+
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 用于获取自定义线程池
- * @author Zheng Jie
+
  * @date 2019年10月31日18:16:47
  */
 public class ThreadPoolExecutorUtil {
