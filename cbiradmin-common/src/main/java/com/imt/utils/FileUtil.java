@@ -37,10 +37,7 @@ import java.util.Map;
 
 /**
  * File工具类，扩展 hutool 工具包
- *
-
- * @date 2018-12-27
- */
+ * */
 public class FileUtil extends cn.hutool.core.io.FileUtil {
 
     private static final Logger log = LoggerFactory.getLogger(FileUtil.class);

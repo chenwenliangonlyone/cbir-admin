@@ -57,21 +57,27 @@ public class LocalStorageController {
     @PostMapping
     @PreAuthorize("@el.check('storage:add')")
     public ResponseEntity<Object> create(@RequestParam String name, @RequestParam("file") MultipartFile file){
-        localStorageService.create(name, file);
+        localStorageService.create(name,null,null, file);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping("/pictures")
     @ApiOperation("上传图片")
-    public ResponseEntity<Object> upload(@RequestParam String categoryId,@RequestParam MultipartFile[] multipartFiles){
+    public ResponseEntity<Object> upload(@RequestParam Long id, @RequestParam String labelName, @RequestParam("file") MultipartFile[] file){
         // 判断文件是否为图片
         ArrayList<LocalStorage> retList = new ArrayList<LocalStorage>();
-        for (MultipartFile multipartFile : multipartFiles) {
+        if (id == null || labelName == ""){
+            throw new BadRequestException("请上传标签ID和标签名称");
+        }
+        if (file.length == 0) {
+            throw new BadRequestException("上传图片不能为空");
+        }
+        for (MultipartFile multipartFile : file) {
             String suffix = FileUtil.getExtensionName(multipartFile.getOriginalFilename());
             if(!FileUtil.IMAGE.equals(FileUtil.getFileType(suffix))){
                 throw new BadRequestException("只能上传图片");
             }
-            LocalStorage localStorage = localStorageService.create(null, multipartFile);
+            LocalStorage localStorage = localStorageService.create(null, id, labelName, multipartFile);
             retList.add(localStorage);
         }
         return new ResponseEntity<>(retList, HttpStatus.OK);

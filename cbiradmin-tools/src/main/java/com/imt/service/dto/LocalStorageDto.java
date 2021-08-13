@@ -21,4 +21,8 @@ public class LocalStorageDto extends BaseDTO implements Serializable {
     private String type;
 
     private String size;
+
+    private String labelId;
+
+    private String labelName;
 }

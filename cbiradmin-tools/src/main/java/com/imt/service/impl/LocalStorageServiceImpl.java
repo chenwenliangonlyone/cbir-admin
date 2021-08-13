@@ -38,10 +38,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 
-/**
-
-* @date 2019-09-05
-*/
 @Service
 @RequiredArgsConstructor
 public class LocalStorageServiceImpl implements LocalStorageService {
@@ -70,11 +66,11 @@ public class LocalStorageServiceImpl implements LocalStorageService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public LocalStorage create(String name, MultipartFile multipartFile) {
+    public LocalStorage create(String name, Long labelId, String labelName, MultipartFile multipartFile) {
         FileUtil.checkSize(properties.getMaxSize(), multipartFile.getSize());
         String suffix = FileUtil.getExtensionName(multipartFile.getOriginalFilename());
         String type = FileUtil.getFileType(suffix);
-        File file = FileUtil.upload(multipartFile, properties.getPath().getPath() + type +  File.separator);
+        File file = FileUtil.upload(multipartFile, properties.getPath().getPath() + labelId +  File.separator);
         if(ObjectUtil.isNull(file)){
             throw new BadRequestException("上传失败");
         }
@@ -86,7 +82,9 @@ public class LocalStorageServiceImpl implements LocalStorageService {
                     suffix,
                     file.getPath(),
                     type,
-                    FileUtil.getSize(multipartFile.getSize())
+                    FileUtil.getSize(multipartFile.getSize()),
+                    labelId,
+                    labelName
             );
             return localStorageRepository.save(localStorage);
         }catch (Exception e){
@@ -123,6 +121,8 @@ public class LocalStorageServiceImpl implements LocalStorageService {
             map.put("备注名", localStorageDTO.getName());
             map.put("文件类型", localStorageDTO.getType());
             map.put("文件大小", localStorageDTO.getSize());
+            map.put("标签ID", localStorageDTO.getLabelId());
+            map.put("标签名称", localStorageDTO.getLabelName());
             map.put("创建者", localStorageDTO.getCreateBy());
             map.put("创建日期", localStorageDTO.getCreateTime());
             list.add(map);

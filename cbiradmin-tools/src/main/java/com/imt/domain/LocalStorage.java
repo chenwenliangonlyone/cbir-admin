@@ -58,13 +58,21 @@ public class LocalStorage extends BaseEntity implements Serializable {
     @ApiModelProperty(value = "大小")
     private String size;
 
-    public LocalStorage(String realName,String name, String suffix, String path, String type, String size) {
+    @ApiModelProperty(value = "标签ID")
+    private Long labelId;
+
+    @ApiModelProperty(value = "标签名称")
+    private String labelName;
+
+    public LocalStorage(String realName,String name, String suffix, String path, String type, String size, Long labelId, String labelName) {
         this.realName = realName;
         this.name = name;
         this.suffix = suffix;
         this.path = path;
         this.type = type;
         this.size = size;
+        this.labelId = labelId;
+        this.labelName = labelName;
     }
 
     public void copy(LocalStorage source){
