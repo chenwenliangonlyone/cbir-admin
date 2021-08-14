@@ -98,6 +98,25 @@ public class LocalStorageServiceImpl implements LocalStorageService {
     public void update(LocalStorage resources) {
         LocalStorage localStorage = localStorageRepository.findById(resources.getId()).orElseGet(LocalStorage::new);
         ValidationUtil.isNull( localStorage.getId(),"LocalStorage","id",resources.getId());
+        // 如果标签改变 相应图片移动到新标签id文件夹
+        if (resources.getLabelId() != localStorage.getLabelId()) {
+            try {
+                // 获取旧地址绝对路径
+                File dest = new File(localStorage.getPath()).getCanonicalFile();
+                // 获取类别标签父路径
+                String root  = dest.getParentFile().getParent();
+                // 替换类别文件夹后路径
+                String newPath = root + File.separator + resources.getLabelId() + File.separator + localStorage.getRealName();
+                // 图像迁移
+                File oldFile = new File(localStorage.getPath());
+                File newFile = new File(newPath);
+                oldFile.renameTo(newFile);
+                //改变旧记录的path
+                resources.setPath(newPath);
+            }catch (Exception e){
+                throw new BadRequestException("文件转移至新标签文件夹失败");
+            }
+        }
         localStorage.copy(resources);
         localStorageRepository.save(localStorage);
     }

@@ -15,8 +15,18 @@
 package com.imt.repository;
 
 import com.imt.domain.LocalStorage;
+import com.imt.domain.StorageLabel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
+import java.util.List;
+
 public interface LocalStorageRepository extends JpaRepository<LocalStorage, Long>, JpaSpecificationExecutor<LocalStorage> {
+    /**
+     * 根据labelId查询
+     * @param labelId
+     * @return /
+     */
+    List<LocalStorage> findByLabelId(Long labelId);
+
 }

@@ -63,10 +63,10 @@ public class LocalStorageController {
 
     @PostMapping("/pictures")
     @ApiOperation("上传图片")
-    public ResponseEntity<Object> upload(@RequestParam Long id, @RequestParam String labelName, @RequestParam("file") MultipartFile[] file){
+    public ResponseEntity<Object> upload(@RequestParam Long labelId, @RequestParam String labelName, @RequestParam("file") MultipartFile[] file){
         // 判断文件是否为图片
         ArrayList<LocalStorage> retList = new ArrayList<LocalStorage>();
-        if (id == null || labelName == ""){
+        if (labelId == null || labelName == ""){
             throw new BadRequestException("请上传标签ID和标签名称");
         }
         if (file.length == 0) {
@@ -77,7 +77,7 @@ public class LocalStorageController {
             if(!FileUtil.IMAGE.equals(FileUtil.getFileType(suffix))){
                 throw new BadRequestException("只能上传图片");
             }
-            LocalStorage localStorage = localStorageService.create(null, id, labelName, multipartFile);
+            LocalStorage localStorage = localStorageService.create(null, labelId, labelName, multipartFile);
             retList.add(localStorage);
         }
         return new ResponseEntity<>(retList, HttpStatus.OK);

@@ -14,7 +14,6 @@
  */
 package com.imt.repository;
 
-import com.imt.domain.LocalStorage;
 import com.imt.domain.StorageLabel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -24,7 +23,7 @@ import java.util.Set;
 
 public interface StorageLabelRepository extends JpaRepository<StorageLabel, Long>, JpaSpecificationExecutor<StorageLabel> {
     /**
-     * 根据名称查询
+     * 根据labelName查询
      * @param name 名称
      * @return /
      */

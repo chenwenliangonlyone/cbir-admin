@@ -16,9 +16,11 @@
 package com.imt.service.impl;
 
 import com.imt.config.FileProperties;
+import com.imt.domain.LocalStorage;
 import com.imt.domain.StorageLabel;
 import com.imt.exception.BadRequestException;
 import com.imt.exception.EntityExistException;
+import com.imt.repository.LocalStorageRepository;
 import com.imt.repository.StorageLabelRepository;
 import com.imt.service.StorageLabelService;
 import com.imt.service.dto.StorageLabelDto;
@@ -45,8 +47,8 @@ import java.util.*;
 public class StorageLabelServiceImpl implements StorageLabelService {
 
     private final StorageLabelRepository storageLabelRepository;
+    private final LocalStorageRepository localStorageRepository;
     private final StorageLabelMapper storageLabelMapper;
-    private final RedisUtils redisUtils;
     private final FileProperties properties;
 
     @Override
@@ -74,7 +76,7 @@ public class StorageLabelServiceImpl implements StorageLabelService {
     public void create(StorageLabel resources) {
         StorageLabel storageLabel = storageLabelRepository.findByLabelName(resources.getLabelName());
         if(storageLabel != null){
-            throw new EntityExistException(StorageLabel.class,"labelName",resources.getLabelName());
+            throw new BadRequestException("标签名称 [ " + resources.getLabelName() + " ] 已存在");
         }
         storageLabelRepository.save(resources);
         // 新增对应标签文件夹
@@ -99,6 +101,12 @@ public class StorageLabelServiceImpl implements StorageLabelService {
         }
         ValidationUtil.isNull( label.getId(),"Label","labelId",resources.getId());
         resources.setId(label.getId());
+        // 修改该标签的图片中的标签信息
+        List<LocalStorage> localStoragelist = localStorageRepository.findByLabelId(label.getId());
+        for (LocalStorage localStorage : localStoragelist) {
+            localStorage.setLabelName(resources.getLabelName());
+            localStorageRepository.save(localStorage);
+        }
         storageLabelRepository.save(resources);
     }
 
