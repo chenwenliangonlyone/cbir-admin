@@ -31,7 +31,6 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletResponse;
 
 /**
-* @website https://el-admin.vip
 * @author ${author}
 * @date ${date}
 **/

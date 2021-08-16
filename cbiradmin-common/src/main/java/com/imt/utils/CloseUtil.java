@@ -17,8 +17,6 @@ package com.imt.utils;
 import java.io.Closeable;
 
 /**
-
- * @website https://el-admin.vip
  * @description 用于关闭各种连接，缺啥补啥
  * @date 2021-03-05
  **/

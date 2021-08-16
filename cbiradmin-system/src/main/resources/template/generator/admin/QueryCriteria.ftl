@@ -30,7 +30,6 @@ import com.imt.annotation.Query;
 </#if>
 
 /**
-* @website https://el-admin.vip
 * @author ${author}
 * @date ${date}
 **/

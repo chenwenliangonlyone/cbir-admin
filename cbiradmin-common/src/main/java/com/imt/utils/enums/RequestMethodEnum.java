@@ -19,8 +19,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
-
- * @website https://el-admin.vip
  * @description
  * @date 2020-06-10
  **/
