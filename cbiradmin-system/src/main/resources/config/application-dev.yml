@@ -108,8 +108,8 @@ file:
     path: ~/file/
     avatar: ~/avatar/
   linux:
-    path: /home/cbiradmin/file/
-    avatar: /home/cbiradmin/avatar/
+    path: /mnt/data/Item/file/
+    avatar: /mnt/data/Item/avatar/
   windows:
     path: C:\cbiradmin\file\
     avatar: C:\cbiradmin\avatar\
