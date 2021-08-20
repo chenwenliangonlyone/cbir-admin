@@ -667,25 +667,7 @@ CREATE TABLE `tool_local_storage` (
   `create_time` datetime DEFAULT NULL COMMENT '创建日期',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`storage_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=COMPACT COMMENT='本地存储';
-
--- ----------------------------
--- Records of tool_local_storage
--- ----------------------------
-BEGIN;
-INSERT INTO `tool_local_storage` VALUES (37, 'WechatIMG137-2021081306435893.png', 'WechatIMG137', 'png', '/Users/coder/project/cbiradmin/~/file/8/WechatIMG137-2021081306435893.png', '图片', '242.51KB   ', 8, '魔方', 'admin', 'admin', '2021-08-13 18:44:03', '2021-08-13 18:44:03');
-INSERT INTO `tool_local_storage` VALUES (39, '4421627978725_.pic-20210813073830596.jpg', '4421627978725_.pic', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/4421627978725_.pic-20210813073830596.jpg', '图片', '189.93KB   ', 10, '9', 'mytg', 'mytg', '2021-08-13 19:38:31', '2021-08-13 19:38:47');
-INSERT INTO `tool_local_storage` VALUES (40, '4421627978725_.pic-20210813074856745.jpg', '4421627978725_.pic', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/4421627978725_.pic-20210813074856745.jpg', '图片', '189.93KB   ', 10, '埃及女皇', 'mytg', 'mytg', '2021-08-13 19:48:57', '2021-08-13 19:48:57');
-INSERT INTO `tool_local_storage` VALUES (41, '4431627978939_.pic-20210813075041810.jpg', '4431627978939_.pic', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/4431627978939_.pic-20210813075041810.jpg', '图片', '193.35KB   ', 10, '10', 'mytg', 'mytg', '2021-08-13 19:50:42', '2021-08-13 20:01:35');
-INSERT INTO `tool_local_storage` VALUES (42, 'train_DinoBone_10203-20210813105212355.jpg', 'train_DinoBone_10203', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/train_DinoBone_10203-20210813105212355.jpg', '图片', '12.81KB   ', 10, '埃及女皇', 'mytg', 'mytg', '2021-08-13 22:52:12', '2021-08-13 22:52:12');
-INSERT INTO `tool_local_storage` VALUES (43, 'train_DinoBone_06081-20210813105212355.jpg', 'train_DinoBone_06081', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/train_DinoBone_06081-20210813105212355.jpg', '图片', '13.43KB   ', 10, '埃及女皇', 'mytg', 'mytg', '2021-08-13 22:52:12', '2021-08-13 22:52:12');
-INSERT INTO `tool_local_storage` VALUES (44, 'train_DinoBone_08241-20210813105212425.jpg', 'train_DinoBone_08241', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/train_DinoBone_08241-20210813105212425.jpg', '图片', '13.64KB   ', 10, '埃及女皇', 'mytg', 'mytg', '2021-08-13 22:52:12', '2021-08-13 22:52:12');
-INSERT INTO `tool_local_storage` VALUES (45, 'train_DinoBone_10203-20210813105212355-20210813105723855.jpg', 'train_DinoBone_10203-20210813105212355', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/train_DinoBone_10203-20210813105212355-20210813105723855.jpg', '图片', '12.81KB   ', 10, '埃及女皇', 'mytg', 'mytg', '2021-08-13 22:57:24', '2021-08-13 22:57:24');
-INSERT INTO `tool_local_storage` VALUES (46, 'train_DinoBone_08241-20210813105212425-20210813105723855.jpg', 'train_DinoBone_08241-20210813105212425', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/train_DinoBone_08241-20210813105212425-20210813105723855.jpg', '图片', '13.64KB   ', 10, '埃及女皇', 'mytg', 'mytg', '2021-08-13 22:57:24', '2021-08-13 22:57:24');
-INSERT INTO `tool_local_storage` VALUES (47, 'train_DinoBone_06081-20210813105212355-20210813105723855.jpg', 'train_DinoBone_06081-20210813105212355', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/train_DinoBone_06081-20210813105212355-20210813105723855.jpg', '图片', '13.43KB   ', 10, '埃及女皇', 'mytg', 'mytg', '2021-08-13 22:57:24', '2021-08-13 22:57:24');
-INSERT INTO `tool_local_storage` VALUES (48, 'train_DinoBone_06081-20210813105212355-20210813105723877.jpg', 'train_DinoBone_06081-20210813105212355', 'jpg', '/Users/coder/project/cbiradmin/~/file/10/train_DinoBone_06081-20210813105212355-20210813105723877.jpg', '图片', '13.43KB   ', 10, '埃及女皇', 'mytg', 'mytg', '2021-08-13 22:57:24', '2021-08-13 22:57:24');
-INSERT INTO `tool_local_storage` VALUES (50, 'train_DinoBone_10203-20210813105212355-20210813105723883.jpg', 'train_DinoBone_10203-20210813105212355', 'jpg', '/Users/coder/project/cbiradmin/~/file/8/train_DinoBone_10203-20210813105212355-20210813105723883.jpg', '图片', '12.81KB   ', 8, '魔方', 'mytg', 'admin', '2021-08-13 22:57:24', '2021-08-14 15:07:08');
-COMMIT;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=COMPACT COMMENT='本地存储';
 
 -- ----------------------------
 -- Table structure for tool_storage_label
@@ -700,15 +682,6 @@ CREATE TABLE `tool_storage_label` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`label_id`) USING BTREE,
   KEY `inx_label_name` (`label_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=COMPACT COMMENT='标签';
-
--- ----------------------------
--- Records of tool_storage_label
--- ----------------------------
-BEGIN;
-INSERT INTO `tool_storage_label` VALUES (8, '魔方', 'admin', 'admin', '2021-08-13 18:43:42', '2021-08-13 18:43:42');
-INSERT INTO `tool_storage_label` VALUES (9, '蜗牛niu ', 'mytg', 'mytg', '2021-08-13 19:21:41', '2021-08-13 19:26:32');
-INSERT INTO `tool_storage_label` VALUES (10, '埃及女皇', 'mytg', 'mytg', '2021-08-13 19:38:20', '2021-08-13 19:38:20');
-COMMIT;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=COMPACT COMMENT='标签';
 
 SET FOREIGN_KEY_CHECKS = 1;
